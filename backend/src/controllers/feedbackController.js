@@ -2,12 +2,12 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-// Controller method to submit feedback
+// mehtod to submit feedback
 export const submitFeedback = async (req, res) => {
   const { rating, comment, feedbackReason, userType, name, email } = req.body;
 
   try {
-    // Creating a new feedback entry in the database using Prisma
+    // creating a new feedback entry 
     const feedback = await prisma.feedback.create({
       data: {
         rating,
@@ -19,13 +19,13 @@ export const submitFeedback = async (req, res) => {
       },
     });
 
-    // Sending success response
+    // ssending success response
     res.status(201).json({
       message: 'Feedback submitted successfully!',
       feedback,
     });
   } catch (error) {
-    // Handling any errors and sending error response
+    // Handling any errors
     console.error(error);
     res.status(500).json({
       message: 'Error submitting feedback',
@@ -34,7 +34,7 @@ export const submitFeedback = async (req, res) => {
   }
 };
 
-// Controller method to get all feedback data
+// method to get all feedback data
 export const getAllFeedback = async (req, res) => {
   try {
     // Fetching all feedback data from the database

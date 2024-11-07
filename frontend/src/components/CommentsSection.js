@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import dayjs from 'dayjs'; // For date manipulation
+import dayjs from 'dayjs'; // For date manippulation
 
 const CommentsSection = ({ feedbackData, onLike, onDislike }) => {
   const [filter, setFilter] = useState('all'); // For rating filter
@@ -7,7 +7,6 @@ const CommentsSection = ({ feedbackData, onLike, onDislike }) => {
 
   // Time-based filter logic
   const filteredComments = feedbackData.filter(feedback => {
-    // Rating filter
     if (filter !== 'all' && feedback.rating !== parseInt(filter, 10)) {
       return false;
     }
@@ -21,10 +20,10 @@ const CommentsSection = ({ feedbackData, onLike, onDislike }) => {
       return false; // Only show comments from the last week
     }
 
-    return true; // No time filter
+    return true; 
   });
 
-  // Handle the like functionality
+  // likinig functionality
   const handleLike = (id) => {
     if (onLike) {
       onLike(id);
@@ -33,7 +32,7 @@ const CommentsSection = ({ feedbackData, onLike, onDislike }) => {
     }
   };
 
-  // Handle the dislike functionality
+  //Handles the dislike functionality
   const handleDislike = (id) => {
     if (onDislike) {
       onDislike(id);

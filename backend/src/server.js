@@ -9,11 +9,11 @@ dotenv.config();
 const PORT = process.env.PORT || 7000;
 const app = express();
 
-app.use(cors()); // Allows Cross-Origin requests
-app.use(bodyParser.json()); // Parses incoming JSON requests
+app.use(cors()); // to interact from frontend to backend
+app.use(bodyParser.json()); 
 
-// Use the feedback routes for API endpoints
-app.use('/api', feedbackRoutes); // All routes will be prefixed with "/api"
+// Using here the feedback routes for API endpoints
+app.use('/api', feedbackRoutes); 
 
 app.get('/', (req, res) =>{
     res.send("Hello World!");

@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import {
   Chart as ChartJS,
@@ -22,7 +20,8 @@ ChartJS.register(
 );
 
 const RatingChart = ({ feedbackData }) => {
-  // Ensure ratings are correctly counted, even if it's zero
+  //ratingss counted
+
   const ratingsCount = [1, 2, 3, 4, 5].map((rating) => {
     // Count how many times each rating appears in the feedback data
     const count = feedbackData.filter((item) => item.rating === rating).length;
@@ -35,10 +34,10 @@ const RatingChart = ({ feedbackData }) => {
       {
         label: 'Number of Ratings',
         data: ratingsCount,
-        backgroundColor: 'rgba(60, 23, 101, 1)', // Bar color (purple)
-        borderRadius: 15,
+        backgroundColor: 'rgba(60, 23, 101, 1)', 
         borderColor: 'rgba(60, 23, 101, 1)',
         borderWidth: 1, // Optional border width
+        borderRadius: 15
       },
     ],
   };
@@ -54,17 +53,17 @@ const RatingChart = ({ feedbackData }) => {
     },
     layout: {
       padding: {
-        left: 30,   // Adds padding on the left side
-        right: 30,  // Adds padding on the right side
-        top: 20,    // Adds padding on the top
-        bottom: 40, // Adds padding on the bottom
+        left: 30,   
+        right: 30,
+        top: 20,    
+        bottom: 40, 
       },
     },
     scales: {
       x: {
-        beginAtZero: true, // Ensure x-axis starts at 0
+        beginAtZero: true, // Ensuring here that the x-axis starts at 0
         ticks: {
-          stepSize: 1, // Control the spacing between ticks on the x-axis
+          stepSize: 1, 
         },
       },
       y: {
@@ -77,14 +76,14 @@ const RatingChart = ({ feedbackData }) => {
       },
     },
     responsive: true,
-    maintainAspectRatio: false, // Set false to allow custom height/width
+    maintainAspectRatio: false, 
     height: 300, // Set custom height for the chart (smaller size)
     width: 400,  // Set custom width for the chart (smaller size)
     datasets: [{
-      barPercentage: 0.5, // Decrease bar width slightly to leave space
+      barPercentage: 0.5, 
     }],
     // Adjust categoryPercentage for a 5px gap between bars
-    categoryPercentage: 0.8, // Adjust this value to control the gap size (lower value increases space)
+    categoryPercentage: 0.8, 
   };
 
   return (
@@ -93,10 +92,10 @@ const RatingChart = ({ feedbackData }) => {
       <div
         style={{
           position: 'relative',
-          height: '300px', // Set smaller height
-          width: '400px',  // Set smaller width
-          background: 'white', // Change background color to yellow
-          borderRadius: '10px', // Optional rounded corners for the background
+          height: '300px', 
+          width: '400px',  
+          background: 'white', 
+          borderRadius: '10px', 
         }}
       >
         <Bar data={data} options={options} />
