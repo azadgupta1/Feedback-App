@@ -1,17 +1,3 @@
-// import React from 'react'
-// import FeedbackForm from './components/FeedbackForm';
-
-
-// function App() {
-//   return (
-//     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-//       <FeedbackForm />
-//     </div>
-//   )
-// }
-
-// export default App
-
 
 // import React, { useState } from 'react';
 // import FeedbackForm from './components/FeedbackForm';
@@ -57,17 +43,29 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
-      <div className="mb-4">
-        <button
+    <div className="min-h-screen bg-gradient-to-br from-blue-400 to-purple-800 flex flex-col items-center justify-center">
+      <div className="mt-8 mb-4">
+        {/* <button
           onClick={toggleView}
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+          className="px-4 py-2 bg-gradient-to-r from-blue-400 to-blue-500 text-white rounded hover:from-green-500 hover:to-blue-600 transition"
         >
           {view === 'form' ? 'View Dashboard' : 'Submit Feedback'}
-        </button>
+        </button> */}
+        <button
+  onClick={toggleView}
+  className="text-white bg-gradient-to-r from-pink-400 to-pink-500 font-medium rounded-full text-sm px-5 py-2.5 mb-2 hover:from-pink-500 hover:to-pink-600 focus:outline-none focus:ring-4 focus:ring-pink-300 dark:focus:ring-pink-600 transition"
+>
+  {view === 'form' ? 'View Dashboard' : 'Submit Feedback'}
+</button>
+
+
+
       </div>
 
-      {view === 'form' ? <FeedbackForm /> : <FeedbackDashboard />}
+      {/* Adjust the width of the form/dashboard container */}
+      <div className="w-full max-w-lg mt-8 p-4 bg-white rounded shadow-md">
+        {view === 'form' ? <FeedbackForm /> : <FeedbackDashboard />}
+      </div>
     </div>
   );
 }
