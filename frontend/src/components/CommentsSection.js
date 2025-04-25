@@ -5,6 +5,8 @@ const CommentsSection = ({ feedbackData, onLike, onDislike }) => {
   const [filter, setFilter] = useState('all'); // For rating filter
   const [timeFilter, setTimeFilter] = useState('all'); // For time filter
 
+  const b = 4;
+
   // Time-based filter logic
   const filteredComments = feedbackData.filter(feedback => {
     if (filter !== 'all' && feedback.rating !== parseInt(filter, 10)) {
