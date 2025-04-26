@@ -1,4 +1,4 @@
-﻿# Feedback Dashboard and Rating Chart
+﻿# Feedback Dashboard and Rating Charts
 
 ## Project Overview
 The **Feedback Dashboard and Rating Chart** is a web application where users can submit feedback with ratings from 1 to 5 stars. It visually displays the feedback distribution in a bar chart. The app uses **React** for the frontend and **Chart.js** to create the rating chart, styled with **Tailwind CSS** for a clean and responsive design.
